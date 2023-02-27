@@ -4,10 +4,8 @@ server:
 spring:
   datasource:
     url: jdbc:mariadb://localhost:3306/hbd_onf_u
-#    username: root
-#    password: root
-    username: devfuse
-    password: devfuse0803
+    username:
+    password:
     driver-class-name: org.mariadb.jdbc.Driver
     hikari:
       connection-timeout: 3000
@@ -19,16 +17,13 @@ spring:
 
 logging:
   slack:
-    webhook-uri: https://hooks.slack.com/services/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
+    webhook-uri:
   level:
     org.hibernate:
       type.descriptor.sql: trace #show parameter binding
       SQL: DEBUG
 jwt:
   header: Authorization
-  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
-  #echo 'happy-birthday-onf-u-show-must-go-on-stars-shine-on-that-black-canvas-draw-all-your-fluttering-hearts'|base64
-  secret: aGFwcHktYmlydGhkYXktb25mLXUtc2hvdy1tdXN0LWdvLW9uLXN0YXJzLXNoaW5lLW9uLXRoYXQtYmxhY2stY2FudmFzLWRyYXctYWxsLXlvdXItZmx1dHRlcmluZy1oZWFydHM=
   token-validity-in-seconds: 86400
 
 
